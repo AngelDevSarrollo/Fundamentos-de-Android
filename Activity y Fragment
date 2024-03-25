@@ -1,0 +1,72 @@
+- Activity
+
+Una Activity representa una sola pantalla con una interfaz de usuario. Es uno de los componentes básicos de una aplicación Android. Cada actividad está diseñada para realizar una acción 
+específica y puede iniciar otras actividades para realizar diferentes acciones. 
+Por ejemplo, una aplicación puede tener una actividad para la lista principal de elementos y otra actividad para los detalles de esos elementos.
+
+- Características Principales:
+
+Representa una pantalla completa.
+Puede contener múltiples Fragments.
+Tiene su propio ciclo de vida.
+Se define en el AndroidManifest.xml.
+Las Activities son independientes y pueden lanzarse desde otras aplicaciones (si se configuran para ello). Son el punto de entrada para interactuar con el usuario.
+
+- Fragment
+
+Un Fragment representa un comportamiento o una parte de la interfaz de usuario en una Activity. Puedes combinar múltiples fragmentos en una sola actividad para construir una interfaz 
+de usuario multipanel y reutilizar un fragmento en múltiples actividades. Los fragmentos son como "sub-actividades" que pueden ser usados y navegados dentro de una Activity.
+
+- Características Principales:
+
+Puede ser utilizado dentro de una Activity para representar una parte de la interfaz de usuario o un comportamiento que el usuario puede interactuar.
+Facilita la reutilización de componentes UI y lógica en diferentes Activities.
+Tiene su propio ciclo de vida, pero está intrínsecamente ligado al ciclo de vida de la Activity contenedora.
+No se define en el AndroidManifest.xml porque es un componente que depende de una Activity.
+Los Fragments son especialmente útiles para adaptar tu aplicación a diferentes tamaños de pantalla, como tablets y teléfonos, permitiendo una gestión más flexible de la interfaz de usuario.
+
+- Diferencias Clave
+
+  - Independencia: Una Activity puede existir de manera independiente, mientras que un Fragment debe estar siempre asociado a una Activity.
+  - Reutilización: Los Fragments están diseñados para ser reutilizados en múltiples Activities. La misma pieza de UI y lógica encapsulada en un Fragment puede ser presentada en diferentes contextos dentro de la aplicación.
+  - Composición de UI: Mientras que una Activity representa una pantalla completa, los Fragments se pueden combinar y organizar de manera flexible para crear interfaces de usuario complejas dentro de una misma Activity.
+
+- Ejemplo Práctico
+
+Imagina que estás construyendo una aplicación de correo electrónico. Podrías tener una Activity que liste todos los correos. Al seleccionar un correo, puedes tener dos enfoques:
+
+En teléfonos: Iniciar una nueva Activity que muestre el detalle del correo seleccionado.
+En tablets: Mostrar el detalle del correo en otro Fragment al lado de la lista de correos, sin necesidad de cambiar de Activity.
+Esta flexibilidad es lo que hace a los Fragments tan útiles en el desarrollo de aplicaciones Android, especialmente cuando se trata de adaptar aplicaciones para dispositivos con diferentes tamaños de pantalla y orientaciones.
+
+- Ejemplo de Uso de Activity: Redes Sociales
+
+Imagina una aplicación de redes sociales con varias pantallas: una para el feed de noticias, otra para subir fotos, otra para mensajes directos, y otra para el perfil del usuario.
+
+Feed de Noticias: Una Activity donde se muestra el feed principal de noticias. Esta es probablemente la pantalla de inicio después de iniciar sesión.
+Subir Fotos: Una Activity dedicada a subir nuevas fotos. Esta actividad puede incluir opciones para tomar una foto o seleccionarla de la galería, además de editarla y publicarla.
+Mensajes Directos: Una Activity para ver y enviar mensajes directos a otros usuarios.
+Perfil del Usuario: Una Activity que muestra el perfil del usuario, incluyendo fotos publicadas, información personal, y ajustes.
+Cada una de estas pantallas representa una funcionalidad completa y separada dentro de la aplicación, lo que justifica el uso de Activities separadas.
+
+- Ejemplo de Uso de Fragment: Aplicación de Noticias
+Considera una aplicación de noticias con una interfaz que muestra una lista de artículos en un panel y el contenido del artículo seleccionado en otro.
+
+Lista de Artículos: Un Fragment que muestra una lista de artículos. Al seleccionar un artículo, se actualiza el contenido mostrado en el Fragment de detalle.
+Detalle del Artículo: Un Fragment que muestra el contenido completo del artículo seleccionado. Este fragmento se actualiza cada vez que el usuario selecciona un artículo diferente de la lista.
+En una tablet, ambos Fragments podrían mostrarse lado a lado en la misma Activity, aprovechando el espacio de pantalla adicional. En un teléfono, el Fragment de lista podría ocupar toda la pantalla, y al seleccionar un artículo, 
+se podría reemplazar con el Fragment de detalle o abrirlo en una nueva Activity.
+
+- Ejemplo de Integración Activity-Fragment: Aplicación de E-commerce
+Una aplicación de e-commerce donde se navega por categorías de productos, se ve el detalle de cada producto y se gestiona el carrito de compras.
+
+Navegación por Categorías: Una Activity que incluye un Fragment para mostrar las categorías de productos. Al seleccionar una categoría, se actualiza un Fragment de lista de productos con los artículos pertenecientes a esa categoría.
+Detalle de Producto: Al seleccionar un producto de la lista, se puede abrir una nueva Activity con un Fragment que muestre los detalles del producto, permitiendo al usuario añadirlo al carrito de compras.
+Carrito de Compras: Una Activity que podría incluir varios Fragments, uno mostrando la lista de productos añadidos al carrito y otro para el proceso de checkout.
+En estos ejemplos, las Activities se utilizan para cambiar entre funcionalidades principales de la aplicación, mientras que los Fragments permiten una organización flexible de la interfaz de usuario y la reutilización de componentes 
+en diferentes contextos. La capacidad de combinar Activities y Fragments ofrece una gran flexibilidad en el diseño y desarrollo de aplicaciones Android, permitiendo crear experiencias de usuario ricas y adaptables a distintos dispositivos.
+
+
+
+
+
